@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<link rel="stylesheet" type="text/css" href="css/pages.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fallingsnow.css"/>
+		<script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<title>Join Group</title>
+	</head>
+
+	<body>
+		<div id="igloo"><center><a href="homepage.html"><img src="img/pixelgoo.png" /><br/>Home</a></center></div>
+		 <div id="snowflakeContainer">
+		   <p class="snowflake">*</p>
+	   </div>
+
+	<div class="content">	
+ 		<p class="title">Create Group</p>
+		<div id="forms">
+		<form id='sampleform' method='post' action='' onsubmit="javascript:submit_form()" >
+   			<p>
+   			<label>
+	   			Name: <input type='text' name='Name'/>
+	   		</label>
+			</p>
+			<p>
+	   		<label>
+	   			Email: <input type='text' name='Email'/>
+	   		</label>
+			</p>	   		
+	   		<h2>Wish List</h2>
+
+	   		<ol>
+	  			<li><p> <input type='text' name='Gift1'/>
+	   		</p></li>
+	 			<li><p><input type='text' name='Gift2'/></p></li>
+	  			<li><p><input type='text' name='Gift3'/></p></li>
+			</ol>
+
+	   		<p>
+				<center><input type='submit' name='Join' value='Join' /></center>
+	   		</p>
+		</form>
+		</div>
+			
+		<script type="text/javascript" src="js/fallingsnow.js"></script>
+	</body>
+</html>

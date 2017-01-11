@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manage Group</title>
+		<link rel="stylesheet" type="text/css" href="css/pages.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fallingsnow.css"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha384-tSi+YsgNwyohDGfW/VhY51IK3RKAPYDcj1sNXJ16oRAyDP++K0NCzSCUW78EMFmf" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+	
+   <body>
+	   <div id="igloo"><center><a href="homepage.html"><img src="img/pixelgoo.png" /><br/>Home</a></center></div>
+	   <div id="snowflakeContainer">
+		   <p class="snowflake">*</p>
+	   </div>
+	   <!--<div id="igloo"><center><a href="index.html"><img src="img/pixelgoo.png" /><br/>Home</a></center></div>-->
+	   <div class="content">
+	   <p class="title">Manage Group</p>
+		<ul id="members"></ul>
+	   </div>
+	   
+		<script type="text/javascript" src="js/fallingsnow.js"></script>
+   </body>
+ <script type="text/javascript">
+		$.post("/manageGroup", { "JoinCode": $.cookie("JoinCode") }, function(result) {
+			if (result["success"] == 1) {
+				for(var i=0; i<result["members"].length; i++) {
+					var member = result["members"][i];
+					var el = document.createElement("li");
+					if(i==0){
+						el.innerHTML = "<p style='margin:0'>" + member["Name"] + "  <b style='color: black'>(Organizer)</b> <input type='button' value='Edit Member Name' name='editName' onClick='prompt(\x22Enter New Name\x22)' /></p><p>" + member["Email"] + "</p><p>" + 
+							"<input type='button' value='Edit Member Email' name='editEmail' onClick='prompt(\x22Enter New Email\x22)' /> " + 
+							"<input type='button' value='Remove Member' name='removeUser'/>";}
+					else{
+						el.innerHTML = "<p style='margin:0'>" + member["Name"] + "<input type='button' value='Edit Member Name' name='editName' onClick='prompt(\x22Enter New Name\x22)' /></p><p>" + member["Email"] + "</p><p>" + 
+							"<input type='button' value='Edit Member Email' name='editEmail' onClick='prompt(\x22Enter New Email\x22)' /> " + 
+							"<input type='button' value='Remove Member' name='removeUser'/>"}	
+					document.getElementById("members").appendChild(el);
+				}
+			}
+		});
+		</script>
+    
+</html>

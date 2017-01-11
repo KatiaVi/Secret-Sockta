@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px);
+
+*{
+	font-family: 'Slabo 27px', serif;
+	color: #006666;
+}
+html {
+		/* IE10+ */ 
+	background-image: -ms-linear-gradient(top left, #FFFFFF 0%, #99FFCC 50%, #009999 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top left, #FFFFFF 0%, #99FFCC 50%, #009999 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top left, #FFFFFF 0%, #99FFCC 50%, #009999 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #FFFFFF), color-stop(50, #99FFCC), color-stop(100, #009999));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top left, #FFFFFF 0%, #99FFCC 50%, #009999 100%);
+
+	/* W3C Markup */ 
+	background-image: linear-gradient(to bottom right, #FFFFFF 0%, #99FFCC 50%, #009999 100%);
+	
+	background-repeat: no-repeat;
+	height: 100%;
+}
+
+#createNew,#joinExisting,#manageGroup,#viewExisting {
+	width: 200px;
+	height: 50px;
+	margin-left:auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	border: #FFFFFF 2px solid;
+	margin-bottom: 25px;
+}
+
+#igloo{
+	position: fixed;
+	right: 10px;
+	top: 25px;
+}
+
+a{
+	text-decoration: none;
+	color: #006666;
+}
+ .content {
+	position: relative;
+	margin-top: 100px;
+ }
+
+#forms {
+	width: 235px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.title {
+	font-size: 2em;
+	font-weight: bold;
+	margin-left: 50px;
+	text-decoration: underline;
+}
+
+#backgroundaudio {
+  display: none;
+ }
+
+#titlepagedesign{
+	position: relative;
+	width: 100px;
+	height: 50px;
+	top: 440px;
+	left: 200px;
+}
+
+#titlepagedesign a{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#members{
+	width: 200px;
+	height: 50px;
+	margin-left:auto;
+	margin-right: auto;
+}

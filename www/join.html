@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<link rel="stylesheet" type="text/css" href="css/pages.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fallingsnow.css"/>
+        <script type="text/javascript" src="js/index.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<title>Join Group</title>
+	</head>
+
+	<body>
+		<div id="igloo"><center><a href="homepage.html"><img src="img/pixelgoo.png" /><br/>Home</a></center></div>
+		 <div id="snowflakeContainer">
+		   <p class="snowflake">*</p>
+	   </div>
+
+	<div class="content">	
+ 		<p class="title">Join Group</p>
+		<div id="forms">
+		<form id='sampleform' onsubmit="javascript:submit_form();return false;" >
+   			<p>
+   			<label>
+	   			Name: <input type='text' name='Name' required />
+	   		</label>
+			</p>
+   			<p>
+   			<label>
+	   			Join Code: <input type='text' name='JoinCode' required />
+	   		</label>
+			</p>
+			<p>
+	   		<label>
+	   			Email: <input type='email' name='Email' required/>
+	   		</label>
+			</p>	   		
+	   		<h2>Wish List</h2>
+
+	   		<ol>
+	  			<li><p> <input type='text' name='Gift1'/>
+	   		</p></li>
+	 			<li><p><input type='text' name='Gift2'/></p></li>
+	  			<li><p><input type='text' name='Gift3'/></p></li>
+			</ol>
+
+	   		<p>
+				<center><input type='submit' name='Join' value='Join' /></center>
+	   		</p>
+		</form>
+		</div>
+			
+		<script type="text/javascript" src="js/fallingsnow.js"></script>
+	</body>
+		<script type="text/javascript">
+			
+        var submit_form = function() {
+        	var options = $("#sampleform").serializeArray();
+        	console.log(options);
+        	var data = {};
+        	for(var i=0; i<options.length; i++) {
+        		data[options[i]["name"]] = options[i]["value"];
+        	}
+        	console.log(data);
+			
+			$.post("/joinGroup", data, function(result) {
+				if (result["success"] == 1){
+					location.href = "view.html";
+				}
+				else{
+					alert("You've already joined this group!");
+				}
+			});
+			return false;
+        };
+		</script>
+</html>

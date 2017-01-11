@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Join Code</title>
+        <link rel="stylesheet" type="text/css" href="css/pages.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fallingsnow.css"/>
+        <script type="text/javascript" src="js/index.js"></script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		
+    </head>
+	
+    <body> 
+		<style type="text/css">
+		#joinCode {
+			background-color: white;
+			display: inline-block;
+			font-size: 24px;
+			padding: 5px 20px 5px 20px;
+			border: #006666 2px solid;
+		}
+		</style>
+		<div id="snowflakeContainer">
+		   <p class="snowflake">*</p>
+		</div>
+		<div id="igloo"><center><a href="homepage.html"><img src="img/pixelgoo.png" /><br/>Home</a></center>
+		</div>
+		<div class="content">
+			<p class="title">Join Code</p>
+			<p><center><div id="joinCode"></div></center></p><br />
+			<p><center>Please share this code with your fellow group members!</center></p>
+		</div> 	
+
+        <script type="text/javascript" src="js/fallingsnow.js"></script>
+    <script type="text/javascript">
+		function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+		$("#joinCode").html(getCookie("JoinCode"));
+		</script>
+    </body>
+    
+</html>

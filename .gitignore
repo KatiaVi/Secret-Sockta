@@ -1,0 +1,7 @@
+.cordova
+
+node_modules
+
+db.json
+
+plugins
